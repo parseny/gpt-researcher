@@ -170,7 +170,7 @@ The response should contain ONLY the list.
         report_format="apa",
         total_words=1000,
         tone=None,
-        language="english",
+        language="russian",
     ):
         """Generates the report prompt for the given question and research summary.
         Args: question (str): The question to generate the report prompt for
@@ -255,7 +255,7 @@ The response MUST not contain any markdown format or additional text (like ```js
 
     @staticmethod
     def generate_resource_report_prompt(
-        question, context, report_source: str, report_format="apa", tone=None, total_words=1000, language="english"
+        question, context, report_source: str, report_format="apa", tone=None, total_words=1000, language="russian"
     ):
         """Generates the resource report prompt for the given question and research summary.
 
@@ -295,13 +295,13 @@ The response MUST not contain any markdown format or additional text (like ```js
 
     @staticmethod
     def generate_custom_report_prompt(
-        query_prompt, context, report_source: str, report_format="apa", tone=None, total_words=1000, language: str = "english"
+        query_prompt, context, report_source: str, report_format="apa", tone=None, total_words=1000, language: str = "russian"
     ):
         return f'"{context}"\n\n{query_prompt}'
 
     @staticmethod
     def generate_outline_report_prompt(
-        question, context, report_source: str, report_format="apa", tone=None,  total_words=1000, language: str = "english"
+        question, context, report_source: str, report_format="apa", tone=None,  total_words=1000, language: str = "russian"
     ):
         """Generates the outline report prompt for the given question and research summary.
         Args: question (str): The question to generate the outline report prompt for
@@ -326,7 +326,7 @@ The response MUST not contain any markdown format or additional text (like ```js
         report_format="apa",
         tone=None,
         total_words=2000,
-        language: str = "english"
+        language: str = "russian"
     ):
         """Generates the deep research report prompt, specialized for handling hierarchical research results.
         Args:
@@ -484,7 +484,7 @@ and research data:
         max_subsections=5,
         total_words=800,
         tone: Tone = Tone.Objective,
-        language: str = "english",
+        language: str = "russian",
     ) -> str:
         return f"""
 Context:
@@ -585,7 +585,7 @@ Provide the draft headers in a list format using markdown syntax, for example:
 """
 
     @staticmethod
-    def generate_report_introduction(question: str, research_summary: str = "", language: str = "english", report_format: str = "apa") -> str:
+    def generate_report_introduction(question: str, research_summary: str = "", language: str = "russian", report_format: str = "apa") -> str:
         return f"""{research_summary}\n
 Using the above latest information, Prepare a detailed report introduction on the topic -- {question}.
 - The introduction should be succinct, well-structured, informative with markdown syntax.
@@ -598,7 +598,7 @@ Assume that the current date is {datetime.now(timezone.utc).strftime('%B %d, %Y'
 
 
     @staticmethod
-    def generate_report_conclusion(query: str, report_content: str, language: str = "english", report_format: str = "apa") -> str:
+    def generate_report_conclusion(query: str, report_content: str, language: str = "russian", report_format: str = "apa") -> str:
         """
         Generate a concise conclusion summarizing the main findings and implications of a research report.
 
