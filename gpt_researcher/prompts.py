@@ -214,7 +214,7 @@ Please follow all of the following guidelines in your report:
 - {reference_prompt}
 - {tone_prompt}
 
-You MUST write the report in the following language: {language}.
+You MUST ALWAYS write the report in the following language: {language}. USE ONLY RUSSIAN.
 Please do your best, this is very important to my career.
 Assume that the current date is {date.today()}.
 """
@@ -287,7 +287,7 @@ The response MUST not contain any markdown format or additional text (like ```js
             "Use markdown tables and other formatting features when appropriate to organize and present information clearly.\n"
             "Include relevant facts, figures, and numbers whenever available.\n"
             f"The report should have a minimum length of {total_words} words.\n"
-            f"You MUST write the report in the following language: {language}.\n"
+            f"You MUST ALWAYS write the report in the following language: {language}. USE ONLY RUSSIAN.\n"
             "You MUST include all relevant source urls."
             "Every url should be hyperlinked: [url website](url)"
             f"{reference_prompt}"
@@ -382,7 +382,7 @@ Additional requirements:
 - You must also prioritize new articles over older articles if the source can be trusted.
 - Use in-text citation references in {report_format} format and make it with markdown hyperlink placed at the end of the sentence or paragraph that references them like this: ([in-text citation](url)).
 - {tone_prompt}
-- Write in {language}
+- Write ONLY in {language}. Use only {language}.
 
 {reference_prompt}
 
@@ -539,7 +539,7 @@ IMPORTANT:Content and Sections Uniqueness:
 Assume the current date is {datetime.now(timezone.utc).strftime('%B %d, %Y')} if required.
 
 "IMPORTANT!":
-- You MUST write the report in the following language: {language}.
+- You MUST ALWAYS write the report in the following language: {language}. USE ONLY RUSSIAN.
 - The focus MUST be on the main topic! You MUST Leave out any information un-related to it!
 - Must NOT have any introduction, conclusion, summary or reference section.
 - You MUST use in-text citation references in {report_format.upper()} format and make it with markdown hyperlink placed at the end of the sentence or paragraph that references them like this: ([in-text citation](url)).
@@ -593,7 +593,7 @@ Using the above latest information, Prepare a detailed report introduction on th
 - The introduction should be preceded by an H1 heading with a suitable topic for the entire report.
 - You must use in-text citation references in {report_format.upper()} format and make it with markdown hyperlink placed at the end of the sentence or paragraph that references them like this: ([in-text citation](url)).
 Assume that the current date is {datetime.now(timezone.utc).strftime('%B %d, %Y')} if required.
-- The output must be in {language} language.
+- The output must be in {language} language. Use ONLY {language}
 """
 
 
@@ -605,7 +605,7 @@ Assume that the current date is {datetime.now(timezone.utc).strftime('%B %d, %Y'
         Args:
             query (str): The research task or question.
             report_content (str): The content of the research report.
-            language (str): The language in which the conclusion should be written.
+            language (str): The language in which the conclusion should be written. Default is Russian
 
         Returns:
             str: A concise conclusion summarizing the report's main findings and implications.
@@ -626,7 +626,7 @@ Assume that the current date is {datetime.now(timezone.utc).strftime('%B %d, %Y'
     If there is no "## Conclusion" section title written at the end of the report, please add it to the top of your conclusion.
     You must use in-text citation references in {report_format.upper()} format and make it with markdown hyperlink placed at the end of the sentence or paragraph that references them like this: ([in-text citation](url)).
 
-    IMPORTANT: The entire conclusion MUST be written in {language} language.
+    IMPORTANT: The entire conclusion MUST be written in {language} language. Use ONLY RUSSIAN for writing.
 
     Write the conclusion:
     """
